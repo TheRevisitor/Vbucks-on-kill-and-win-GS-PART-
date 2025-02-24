@@ -9,6 +9,7 @@ Once you have the Reboot 3.0 source (which you get from https://github.com/Milxn
 Search for a file named FortPlayerController.cpp
 ![image](https://github.com/user-attachments/assets/9a769355-96dd-4f22-90ba-00be93dec689)
 
+# On Kill
 
 Once there search for "if (KillerPlayerState && KillerPlayerState != DeadPlayerState)" inside of that, make some space and paste this in:
 
@@ -48,7 +49,7 @@ Once there search for "if (KillerPlayerState && KillerPlayerState != DeadPlayerS
 wow! now you have vbucks on kill, just make sure to use the correct ip, port and api key
 
 
-# Vbucks on win
+# On win
 
 in the same file (FortPlayerController.cpp) search for "void AFortPlayerController::ClientOnPawnDiedHook(AFortPlayerController* PlayerController, void* DeathReport)"
 under all that stuff
