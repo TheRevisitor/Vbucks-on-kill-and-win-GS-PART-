@@ -19,31 +19,32 @@ Once there search for "if (KillerPlayerState && KillerPlayerState != DeadPlayerS
     std::string apiUrl = "http://127.0.0.1:3551/api/reload/vbucks?apikey=" + apiKey +
         "&username=" + username + "&reason=" + reason;
 
-    CURL* curl;
-    CURLcode res;
+    std::async(std::launch::async, [username, apiKey, reason, apiUrl] {
+	try {
+    		CURL* curl;
+    		CURLcode res;
 
-    curl = curl_easy_init();
-    if (curl)
-    {
-        curl_easy_setopt(curl, CURLOPT_URL, apiUrl.c_str());
-        curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+    		curl = curl_easy_init();
+    		if (curl)
+    		{
+        		curl_easy_setopt(curl, CURLOPT_URL, apiUrl.c_str());
+        		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
 
-        res = curl_easy_perform(curl);
-        if (res != CURLE_OK)
-        {
-            LOG_ERROR(LogDev, "curl request failed for {}: {}", killerUsername, curl_easy_strerror(res));
-        }
-        else
-        {
-            LOG_INFO(LogDev, "Successfully added V-Bucks for {}", killerUsername);
-        }
+        		res = curl_easy_perform(curl);
+        		if (res != CURLE_OK)
+        		{
+           			LOG_ERROR(LogDev, "curl request failed for {}: {}", killerUsername, curl_easy_strerror(res));
+        		}
+        	else
+        	{
+            		LOG_INFO(LogDev, "Successfully added V-Bucks for {}", killerUsername);
+        	}
 
-        curl_easy_cleanup(curl);
-    }
-    else
-    {
-        LOG_ERROR(LogDev, "Failed to initialize curl for {}.", killerUsername);
-    }
+        	curl_easy_cleanup(curl);
+    	}
+	catch (const std::exception& e) {
+	}
+    });
 
 
 wow! now you have vbucks on kill, just make sure to use the correct ip, port and api key
