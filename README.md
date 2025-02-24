@@ -1,5 +1,5 @@
 # Vbucks-on-kill-and-win-GS-PART-
-This was made for Reboot 3.0 and reload backend
+This was made for Reboot 3.0 and reload backend (Ultimate skid combo)
 (Reboot 3.0 made by Milxnor and reload backend was made by Lawin and Burlone)
 
 # CREDIT ME IF YOU USE THIS!!!
@@ -30,7 +30,7 @@ Once there search for "if (KillerPlayerState && KillerPlayerState != DeadPlayerS
         res = curl_easy_perform(curl);
         if (res != CURLE_OK)
         {
-            LOG_ERROR(LogDev, "CURL request failed for {}: {}", killerUsername, curl_easy_strerror(res));
+            LOG_ERROR(LogDev, "curl request failed for {}: {}", killerUsername, curl_easy_strerror(res));
         }
         else
         {
@@ -41,7 +41,7 @@ Once there search for "if (KillerPlayerState && KillerPlayerState != DeadPlayerS
     }
     else
     {
-        LOG_ERROR(LogDev, "Failed to initialize CURL for {}.", killerUsername);
+        LOG_ERROR(LogDev, "Failed to initialize curl for {}.", killerUsername);
     }
 
 
@@ -56,9 +56,9 @@ under all that stuff
 make some space and paste this in:
 
 
-auto AllPlayerStates = UGameplayStatics::GetAllActorsOfClass(GetWorld(), AFortPlayerStateAthena::StaticClass()); 
+    auto AllPlayerStates = UGameplayStatics::GetAllActorsOfClass(GetWorld(), AFortPlayerStateAthena::StaticClass()); 
 
-for (int i = 0; i < AllPlayerStates.Num(); ++i) {
+      for (int i = 0; i < AllPlayerStates.Num(); ++i) {
 
 	auto CurrentPlayerState = Cast<AFortPlayerStateAthena>(AllPlayerStates.At(i));
 	if (!CurrentPlayerState) continue;
@@ -84,7 +84,7 @@ for (int i = 0; i < AllPlayerStates.Num(); ++i) {
 			res = curl_easy_perform(curl);
 			if (res != CURLE_OK)
 			{
-				LOG_ERROR(LogDev, "CURL request failed for {}: {}", username, curl_easy_strerror(res));
+				LOG_ERROR(LogDev, "curl request failed for {}: {}", username, curl_easy_strerror(res));
 			}
 			else
 			{
@@ -95,6 +95,9 @@ for (int i = 0; i < AllPlayerStates.Num(); ++i) {
 		}
 		else
 		{
-			LOG_ERROR(LogDev, "Failed to initialize CURL for {}.", username);
+			LOG_ERROR(LogDev, "Failed to initialize curl for {}.", username);
 		}
 	}
+
+
+Yay! now you have vbucks on win too, again, just make sure to use the correct ip, port and api key
