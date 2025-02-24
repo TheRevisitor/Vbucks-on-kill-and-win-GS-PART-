@@ -101,6 +101,12 @@ make some space and paste this in:
 		}
 	}
 
+And add:
+#include <string>
+#include <future>
+
+to your FortPlayerController.cpp to the top.
+
 
 Yay! now you have vbucks on win too, again, just make sure to use the correct ip, port and api key
 
