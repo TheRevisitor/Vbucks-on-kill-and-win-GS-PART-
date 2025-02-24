@@ -13,6 +13,8 @@ Search for a file named FortPlayerController.cpp
 
 Once there search for "if (KillerPlayerState && KillerPlayerState != DeadPlayerState)" inside of that, make some space and paste this in:
 
+    #include <string>
+    #include <future>
     std::string username = KillerPlayerState->GetPlayerName().ToString(); 
     std::string apiKey = "ur-api-key";
     std::string reason = "Kill";
@@ -46,7 +48,7 @@ Once there search for "if (KillerPlayerState && KillerPlayerState != DeadPlayerS
 	}
     });
 
-
+Now, copy the #includes and put it to the top of FortPlayerController.cpp and remove it from here.
 wow! now you have vbucks on kill, just make sure to use the correct ip, port and api key
 
 
@@ -101,11 +103,6 @@ make some space and paste this in:
 		}
 	}
 
-And add:
-#include <string>
-#include <future>
-
-to your FortPlayerController.cpp to the top.
 
 
 Yay! now you have vbucks on win too, again, just make sure to use the correct ip, port and api key
