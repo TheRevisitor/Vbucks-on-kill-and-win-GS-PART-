@@ -107,10 +107,9 @@ make some space and paste this in:
 Yay! now you have vbucks on win too, again, just make sure to use the correct ip, port and api key
 
 (oh also, you might need to use these in somwhere in the start of the script :fire:
-#include <string>
-#include <future>
+
 #include <curl/curl.h>
-#include <exception>
+
 
 
 -TheRevisitor
