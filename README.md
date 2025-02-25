@@ -2,6 +2,8 @@
 This was made for Reboot 3.0 and reload backend (Ultimate skid combo)
 (Reboot 3.0 made by Milxnor and reload backend was made by Lawin and Burlone)
 
+# WARNING,THE FOLLOWING CODE IS ASS
+
 # CREDIT ME IF YOU USE THIS!!!
 
 Once you have the Reboot 3.0 source (which you get from https://github.com/Milxnor/Project-Reboot-3.0) just open the sln using visual studio 2022
