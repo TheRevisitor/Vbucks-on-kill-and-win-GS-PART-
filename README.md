@@ -101,6 +101,7 @@ make some space and paste this in:
 			LOG_ERROR(LogDev, "Failed to initialize curl for {}.", username);
 		}
 	}
+    }
 
 
 
